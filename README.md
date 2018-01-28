@@ -41,7 +41,7 @@ How to display messages
     $ redis-cli set "oled:1" `date "+%Y/%m/%d-%H:%M:%S"`
     $ redis-cli set "oled:2" `LANG=C /sbin/ifconfig | grep -v 127.0.0.1 | grep inet | awk '{print $2}' | sed -e 's/addr://' | head -1`
 
-pyright and license
+Copyright and license
 ----
 Copyright (c) 2018 yoggy
 
