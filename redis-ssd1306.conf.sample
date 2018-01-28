@@ -1,0 +1,31 @@
+;
+; redis-ssd1306.conf - for supervisord configuration file
+;
+; install
+;     $ pwd
+;     $ sudo cp redis-ssd1306.conf.sample /etc/supervisor/conf.d/redis-ssd1306.conf
+;     $ sudo vi /etc/supervisor/conf.d/redis-ssd1306.conf
+;       (fix path, etc...)
+;     $ sudo supervisorctl reread
+;     $ sudo supervisorctl add mqtt-exec
+;     $ sudo supervisorctl status
+;     redis-ssd1306         RUNNING    pid 8192, uptime 0:00:30
+;
+; see also
+;     Supervisor: A Process Control System
+;     http://supervisord.org/
+;
+[program:redis-ssd1306]
+command         = /usr/bin/python redis-ssd1306.py
+directory       = /home/pi/work/redis-ssd1306.py/
+numprocs        = 1
+autostart       = true
+autorestart     = true
+user            = pi
+environment     = HOME=/home/pi/
+redirect_stderr = true
+stdout_logfile  = /home/pi/work/redis-ssd1306.py/log.txt
+startsecs               = 1
+startretries            = 10
+stdout_logfile_maxbytes = 10MB
+stdout_logfile_backups = 1
