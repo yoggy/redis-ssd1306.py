@@ -2,7 +2,7 @@ redis-ssd1306.py
 ====
 Display driver program for Adafruit PiOLED (https://www.adafruit.com/product/3527)
 
-* ![img01.png](img01.png)
+* ![img01.jpg](img01.jpg)
 
 
 Setup
